@@ -4,6 +4,8 @@ import { Table, Pagination } from "react-bootstrap";
 const CountriesTable = ({ countries }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+  const handlePageUp = (pageNumber) => setCurrentPage(pageNumber+1);
+  const handlePageDown = (pageNumber) => setCurrentPage(pageNumber-1);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -29,9 +31,14 @@ const CountriesTable = ({ countries }) => {
       );
     });
   };
-  
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(countries.length / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
   return (
-    <>
+    <div>
       <Table hover>
         <thead>
           <tr>
@@ -45,8 +52,13 @@ const CountriesTable = ({ countries }) => {
         </thead>
         <tbody>{renderTableData()}</tbody>
       </Table>
-      <Pagination>{currentPage}-{indexOfLastItem}</Pagination>
-    </>
+      <Pagination>
+      <p>Flows per page</p>
+        <Pagination.Item> {indexOfFirstItem}-{indexOfLastItem}</Pagination.Item>
+          <Pagination.Prev  onClick={() => handlePageDown(currentPage)}/>
+          <Pagination.Next onClick={() => handlePageUp(currentPage)}/>
+        </Pagination>
+    </div>
   );
 };
 
