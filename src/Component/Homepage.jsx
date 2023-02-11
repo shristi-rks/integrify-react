@@ -1,7 +1,9 @@
-function Homepage({country}) {
+import CountriesTable from "./CountriesTable";
+
+function Homepage({countries}) {
     return (
         <div>
-        <CountriesTable country = {country}/>
+        <CountriesTable countries = {countries}/>
         </div>
         
     )

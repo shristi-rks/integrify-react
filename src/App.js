@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { Navbar } from './Component/Navbar';
 import CountriesTable from './Component/CountriesTable';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Homepage from './Component/Homepage';
+import DetailInfo from './Component/DetailInfo';
 
 function App() {
   const [countries, getCountries] = useState([])
@@ -19,12 +22,15 @@ function App() {
   }, [])
   return (
     <>
-      <div>
+    <BrowserRouter>
+    <div>
         <Navbar/>
       </div>
-      <div>
-     <CountriesTable countries = {countries} /> 
-      </div>
+      <Routes>
+        <Route exact path = "/" element ={<Homepage countries={countries} />} />
+        { countries && countries.map((country, index) => <Route path = {`/name/${country.name.common}`} element ={<DetailInfo country={country} key={index} />} /> )}
+      </Routes>
+    </BrowserRouter>
     </>
   )
       }

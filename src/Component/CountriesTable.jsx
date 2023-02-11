@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Table, Pagination } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const CountriesTable = ({ countries }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,7 +28,7 @@ const CountriesTable = ({ countries }) => {
             ))}
              </ul></td>
              <td>{country.population}</td>
-             <td>&gt;</td>{/*HTML Codes for Symbols*/}
+             <td><Link to={`/name/${country.name.common}`}>&gt;</Link></td>{/*HTML Codes for Symbols*/}
         </tr>
       );
     });
