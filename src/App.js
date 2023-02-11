@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Homepage from './Component/Homepage';
 import { Navbar } from './Component/Navbar';
+import CountriesTable from './Component/CountriesTable';
 
 function App() {
   const [countries, getCountries] = useState([])
@@ -23,13 +23,8 @@ function App() {
         <Navbar/>
       </div>
       <div>
-        
+     <CountriesTable countries = {countries} /> 
       </div>
-      <ul>
-        {countries.map((country, index) => {
-          return <Homepage country = {country} key = {index} /> 
-        })}
-      </ul>
     </>
   )
       }

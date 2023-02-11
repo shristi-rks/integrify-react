@@ -1,4 +1,4 @@
-import { Pagination } from "react-bootstrap";
+/*import { Pagination } from "react-bootstrap";
 export function Footer() {
     return (
         <div>
@@ -14,12 +14,11 @@ export function Footer() {
 function Homepage({country}) {
     return (
         <div>
-            <ul>
-            <li> {country.name.common} </li>
-            </ul>
+        <CountriesTable country = {country}/>
         </div>
+        
     )
 
 }
 
-export default Homepage;
+export default Homepage;*/
