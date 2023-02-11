@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-
+import Homepage from './Component/Homepage';
+import { Navbar } from './Component/Navbar';
 
 function App() {
   const [countries, getCountries] = useState([])
@@ -18,10 +19,15 @@ function App() {
   }, [])
   return (
     <>
-      <h2>Countries</h2>
+      <div>
+        <Navbar/>
+      </div>
+      <div>
+        
+      </div>
       <ul>
-        {countries.map((country, i) => {
-          return <li key={i}>{country.name.common}</li>
+        {countries.map((country, index) => {
+          return <Homepage country = {country} key = {index} /> 
         })}
       </ul>
     </>
