@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { Navbar } from './Component/Navbar';
-import CountriesTable from './Component/CountriesTable';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Homepage from './Component/Homepage';
 import DetailInfo from './Component/DetailInfo';
@@ -23,12 +21,12 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <div>
-        <Navbar/>
-      </div>
       <Routes>
         <Route exact path = "/" element ={<Homepage countries={countries} />} />
-        { countries && countries.map((country, index) => <Route path = {`/name/${country.name.common}`} element ={<DetailInfo country={country} key={index} />} /> )}
+        { countries && Object.values(countries).map((country, index) => 
+        <Route path = {`/name/${country.name.common}`} element ={
+        <DetailInfo country={country} index={index} />} /> 
+        )}
       </Routes>
     </BrowserRouter>
     </>

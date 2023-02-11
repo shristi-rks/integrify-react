@@ -17,4 +17,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 - create table and apply pagination
 - install react router
 npm i -D react-router-dom
-- create another page with country information. he URL for country detail will look like this: https://restcountries.com/v3.1/name/{name}
+- create another page with country information. The URL for country detail will look like this: https://restcountries.com/v3.1/name/{name}
+url achived using {`/name/${country.name.common}`}
+- link the button to specific country page using react router
+- Note: have alot of error while using index as key in Route??
+- make card using bootstrap for the country information page
