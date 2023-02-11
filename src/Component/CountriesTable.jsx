@@ -15,18 +15,19 @@ const CountriesTable = ({ countries }) => {
     return currentItems.map((country, index) => {
       return (
         <tr key={index}>
-        <td><img src={country.flags.png} alt= {country.flags.alt} /></td>
+        <td><img src={country.flags.png} alt= {country.flags.alt}/></td>
           <td>{country.name.common}</td>
           <td>{country.region}</td>
           <td>{country.population}</td>
           <td><ul>
-            {country.languages && Object.values(country.languages).map((language) => (
+            {country.languages && Object.values(country.languages).map((language, i) => (
               //adding an error boundary 
-              <li>{language}</li>
+              //adding unique key to list while mapping
+            <li key={i}>{language}</li>
             ))}
              </ul></td>
              <td>{country.population}</td>
-             <td>&gt;</td> {/*HTML Codes for Symbols*/}
+             <td>&gt;</td>{/*HTML Codes for Symbols*/}
         </tr>
       );
     });
@@ -55,8 +56,8 @@ const CountriesTable = ({ countries }) => {
       <Pagination>
       <p>Flows per page</p>
         <Pagination.Item> {indexOfFirstItem}-{indexOfLastItem}</Pagination.Item>
-          <Pagination.Prev  onClick={() => handlePageDown(currentPage)}/>
-          <Pagination.Next onClick={() => handlePageUp(currentPage)}/>
+        <Pagination.Prev onClick={() => handlePageDown(currentPage)}/>
+        <Pagination.Next onClick={() => handlePageUp(currentPage)}/>
         </Pagination>
     </div>
   );
