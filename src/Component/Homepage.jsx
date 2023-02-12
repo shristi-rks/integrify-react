@@ -1,10 +1,10 @@
 import CountriesTable from "./CountriesTable";
-import { Navbar } from "./Navbar";
+import { NavBar } from "./NavBar";
 function Homepage({countries}) {
     return (
         <>
         <div>
-        <Navbar/>
+        <NavBar/>
         </div>
         <div>
         <CountriesTable countries = {countries}/>

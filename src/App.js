@@ -26,6 +26,7 @@ function App() {
         { countries && Object.values(countries).map((country, i) => 
         <Route path = {`/name/${country.name.common}`} key = {i} element ={
         <DetailInfo country={country}/>} /> 
+        // add unique key as attribute to the Route and not in DetailInfo
         )}
       </Routes>
     </BrowserRouter>
