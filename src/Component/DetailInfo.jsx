@@ -10,7 +10,7 @@ function DetailInfo ({country}) {
             <Card.Title> {country.name.common}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{country.capital}</Card.Subtitle> 
             </Card.Header>
-            <Card.Img variant="top" src= {country.flags.png} alt={country.alt} />
+            <Card.Img variant="top" src= {country.flags.svg} alt={country.alt} width="600" height="400" />
             <Card.Body>
             <Card.Text>
             The country belongs to <span><strong>{country.region}</strong></span> and <span><strong>{country.subregion}</strong></span>. Located at the <span><strong>{country.latlng[0]}</strong></span>  &deg;N and <span><strong>{country.latlng[1]}</strong></span> &deg;W, this country has population of <span><strong>{country.population}</strong></span> and it has gained the independent, according to the CIA World Factbook.
