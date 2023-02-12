@@ -1,9 +1,9 @@
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 
-function DetailInfo ({country, index}) {
+function DetailInfo ({country}) {
     return (
-        <div key = {index}>
+        <div>
             <Card> 
             <Card.Header as="h5">
             <Nav.Item>{country.name.common[0]}</Nav.Item>

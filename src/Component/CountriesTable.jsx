@@ -27,7 +27,6 @@ const CountriesTable = ({ countries }) => {
             <li key={i}>{language}</li>
             ))}
              </ul></td>
-             <td>{country.population}</td>
              <td><Link to={`/name/${country.name.common}`}>&gt;</Link></td>{/*HTML Codes for Symbols*/}
         </tr>
       );
