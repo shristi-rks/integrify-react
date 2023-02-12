@@ -4,7 +4,7 @@ function Homepage({countries}) {
     return (
         <>
         <div>
-        <NavBar/>
+        <NavBar countries = {countries}/>
         </div>
         <div>
         <CountriesTable countries = {countries}/>

@@ -1,12 +1,9 @@
-import Button from 'react-bootstrap/Button';
+import Searchbar from './Searchbar';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-
-
-export function NavBar() {
+export function NavBar({countries}) {
     return (
         <Navbar bg="light" expand="lg">
              <Container fluid>
@@ -22,18 +19,10 @@ export function NavBar() {
           </Nav>
         </Navbar.Collapse>
              <Navbar.Brand href="#">Country</Navbar.Brand>
-             <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search by country name" 
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+             <Searchbar countries ={countries} />
              </Container>
-
         </Navbar>
        
     )
 }
+
