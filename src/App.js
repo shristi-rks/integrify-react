@@ -22,7 +22,7 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-        <Route exact path = "/" element ={<Homepage countries={countries} />} />
+        <Route exact path = "/" element ={<Homepage countries={countries}/>} />
         { countries && Object.values(countries).map((country, i) => 
         <Route path = {`/name/${country.name.common}`} key = {i} element ={
         <DetailInfo country={country}/>} /> 

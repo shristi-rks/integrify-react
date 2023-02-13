@@ -1,11 +1,10 @@
-import Searchbar from './Searchbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 export function NavBar({countries}) {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar>
              <Container fluid>
              <Navbar.Toggle aria-controls="navbarScroll" />
              <Navbar.Collapse id="navbarScroll">
@@ -19,7 +18,6 @@ export function NavBar({countries}) {
           </Nav>
         </Navbar.Collapse>
              <Navbar.Brand href="#">Country</Navbar.Brand>
-             <Searchbar countries ={countries} />
              </Container>
         </Navbar>
        
