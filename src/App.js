@@ -11,8 +11,8 @@ function App() {
     fetch(API)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
-        getCountries(res);
+        console.log(res)
+        getCountries(res)
       })
   }
   useEffect(() => {
