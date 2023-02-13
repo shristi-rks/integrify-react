@@ -1,7 +1,6 @@
 import Form from 'react-bootstrap/Form';
 import React, { useState, useEffect } from 'react';
 import { NavBar } from "./NavBar";
-import SearchedCountry from "./SearchedCountry";
 import { PaginatedTable } from "./PaginationedTable";
 
 function Homepage({countries}) {
@@ -20,27 +19,6 @@ function Homepage({countries}) {
         e.preventDefault();
         setSearchTerm(e.target.value);
     } 
-
-    if (searchTerm.length > 0) {
-    return (
-    <>
-    <div>
-    <NavBar />
-    <Form className="d-flex">
-    <Form.Control
-      type="text"
-      placeholder="🔍Search by country name" 
-      value={searchTerm}
-      onChange={handleChange}
-    />
-  </Form>
-  </div>
-    <div>
-    <SearchedCountry filteredCountries={filteredCountries} />
-    </div> 
-   </>  
-)
-}
     return (
         <>
         <NavBar countries = {countries}/>
@@ -53,11 +31,10 @@ function Homepage({countries}) {
         />
       </Form>
         <div>
-        <PaginatedTable countries={countries} />
+        <PaginatedTable countries={filteredCountries.length > 0 ? filteredCountries : countries} />
         </div> 
        </>  
     )
-
 }
 
 export default Homepage;
