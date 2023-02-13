@@ -19,6 +19,15 @@ function Homepage({countries}) {
         e.preventDefault();
         setSearchTerm(e.target.value);
     } 
+
+    const sortCountries =(countries) => {
+        return countries.sort((a,b) => {
+          return a.name.common > b.name.common ? 1 : -1; //if a > b move a back(+1 & -1 from index)
+        })
+    }
+
+    const prettyCountries = filteredCountries.length > 0 ? sortCountries(filteredCountries) : sortCountries(countries)
+    
     return (
         <>
         <NavBar countries = {countries}/>
@@ -31,7 +40,7 @@ function Homepage({countries}) {
         />
       </Form>
         <div>
-        <PaginatedTable countries={filteredCountries.length > 0 ? filteredCountries : countries} />
+        <PaginatedTable countries={prettyCountries} />
         </div> 
        </>  
     )
