@@ -26,7 +26,8 @@ export const PaginatedTable= ({countries}) => {
     return (
         <>
         <CountriesTable currentItem={currentItems} />
-        <Pagination>
+        <div className="d-flex justify-content-end">
+        <Pagination >
         <p>Flows per page</p>
         <select onChange= {handleItemsPerPage}>
           <option value={5}>5</option>
@@ -39,6 +40,7 @@ export const PaginatedTable= ({countries}) => {
           <Pagination.Prev disabled ={currentPage ===1} onClick={() => handlePageDown(currentPage)}/>
           <Pagination.Next onClick={() => handlePageUp(currentPage)}/>
           </Pagination>
+          </div>
           </>
     )
   

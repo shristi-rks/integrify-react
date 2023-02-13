@@ -30,7 +30,8 @@ function Homepage({countries}) {
     
     return (
         <>
-        <NavBar countries = {countries}/>
+        <div className='d-flex justify-content-between'>
+        <NavBar countries = {countries}  />
         <Form className="d-flex">
         <Form.Control
           type="text"
@@ -39,6 +40,7 @@ function Homepage({countries}) {
           onChange={handleChange}
         />
       </Form>
+      </div>
         <div>
         <PaginatedTable countries={prettyCountries} />
         </div> 

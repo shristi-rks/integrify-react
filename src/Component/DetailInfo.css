@@ -1,0 +1,12 @@
+.detail-info-flag {
+    max-width: 1000px;
+}
+
+.detail-country-letter {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;  /*with equal height and width when you add border-radius you get a circle*/
+    background-color: red;
+    display: grid;
+place-items: center;
+}

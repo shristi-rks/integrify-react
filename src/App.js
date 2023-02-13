@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Homepage from './Component/Homepage';
 import DetailInfo from './Component/DetailInfo';
@@ -19,7 +18,7 @@ function App() {
     fetchCountriesData()
   }, [])
   return (
-    <>
+    <div>
     <BrowserRouter>
       <Routes>
         <Route exact path = "/" element ={<Homepage countries={countries}/>} />
@@ -30,7 +29,7 @@ function App() {
         )}
       </Routes>
     </BrowserRouter>
-    </>
+    </div>
   )
       }
  

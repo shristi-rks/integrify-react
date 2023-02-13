@@ -6,7 +6,7 @@ const CountriesTable = ({ currentItem }) => {
     return currentItem.map((country, index) => {
       return (
         <tr key={index}>
-        <td><img src={country.flags.png} alt= {country.flags.alt}/></td>
+        <td><img src={country.flags.png} alt= {country.flags.alt} width={125} height={80} /></td>
           <td>{country.name.common}</td>
           <td>{country.region}</td>
           <td>{country.population}</td>
@@ -17,7 +17,7 @@ const CountriesTable = ({ currentItem }) => {
             <li key={i}>{language}</li>
             ))}
              </ul></td>
-             <td><Link to={`/name/${country.name.common}`}>&gt;</Link></td>{/*HTML Codes for Symbols*/}
+             <td><Link className="text-decoration-none"  to={`/name/${country.name.common}`}>&gt;</Link></td>{/*HTML Codes for Symbols*/}
         </tr>
       );
     });
