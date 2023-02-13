@@ -27,6 +27,8 @@ function Homepage({countries}) {
     }
 
     const prettyCountries = filteredCountries.length > 0 ? sortCountries(filteredCountries) : sortCountries(countries)
+
+    //simplify code to pass different props according to condition. solves the error of reloading the page
     
     return (
         <>
