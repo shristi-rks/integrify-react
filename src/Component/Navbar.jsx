@@ -2,9 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-export function NavBar({countries}) {
+export function NavBar() {
     return (
-        <Navbar>
+        <Navbar collapseOnSelect expand="lg">
              <Container fluid>
              <Navbar.Toggle aria-controls="navbarScroll" />
              <Navbar.Collapse id="navbarScroll">

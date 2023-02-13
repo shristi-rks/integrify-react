@@ -25,7 +25,7 @@ function Homepage({countries}) {
     return (
     <>
     <div>
-    <NavBar countries = {countries}/>
+    <NavBar />
     <Form className="d-flex">
     <Form.Control
       type="text"

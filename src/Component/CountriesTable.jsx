@@ -24,8 +24,7 @@ const CountriesTable = ({ currentItem }) => {
   };
 
   return (
-    <div>
-      <Table hover>
+      <Table responsive hover>
         <thead>
           <tr>
             <th>Flag</th>
@@ -38,7 +37,6 @@ const CountriesTable = ({ currentItem }) => {
         </thead>
         <tbody>{renderTableData()}</tbody>
       </Table>
-    </div>
   );
 };
 

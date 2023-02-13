@@ -12,8 +12,6 @@ export const PaginatedTable= ({countries}) => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = countries.slice(indexOfFirstItem, indexOfLastItem);
 
-    const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
-
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(countries.length / itemsPerPage); i++) {
       pageNumbers.push(i);
