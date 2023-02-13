@@ -1,8 +1,8 @@
-import CountriesTable from "./CountriesTable";
 import Form from 'react-bootstrap/Form';
 import React, { useState, useEffect } from 'react';
 import { NavBar } from "./NavBar";
 import SearchedCountry from "./SearchedCountry";
+import { PaginatedTable } from "./PaginationedTable";
 
 function Homepage({countries}) {
     const [searchTerm, setSearchTerm] = useState("");
@@ -21,7 +21,7 @@ function Homepage({countries}) {
         setSearchTerm(e.target.value);
     } 
 
-    if (filteredCountries.length > 0) {
+    if (searchTerm.length > 0) {
     return (
     <>
     <div>
@@ -53,7 +53,7 @@ function Homepage({countries}) {
         />
       </Form>
         <div>
-        <CountriesTable countries={countries} />
+        <PaginatedTable countries={countries} />
         </div> 
        </>  
     )
